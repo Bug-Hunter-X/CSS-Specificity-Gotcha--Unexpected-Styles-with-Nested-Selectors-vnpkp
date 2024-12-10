@@ -1,0 +1,36 @@
+The solution involves understanding CSS specificity rules and utilizing the `!important` flag judiciously.  Here's the corrected CSS:
+
+```css
+div {
+  font-size: 16px;
+}
+
+.container div {
+  font-size: 18px;
+}
+
+.container p {
+  font-size: 20px;
+}
+
+.container p {
+  color: blue;
+}
+
+.container span {
+  font-size: 14px;
+}
+
+.container span {
+  color: green;
+  font-weight: bold;
+}
+
+/* Solution: Using !important (Use cautiously!) */
+.container span.special {
+  font-size: 22px !important;
+  color: red !important;
+}
+```
+
+**Explanation:** The `!important` flag forces the styles within the `.container span.special` selector to override any other styles that would typically take precedence based on CSS specificity.  This approach can be helpful when dealing with complex scenarios, but should be used sparingly to avoid unexpected conflicts or making maintenance harder.
